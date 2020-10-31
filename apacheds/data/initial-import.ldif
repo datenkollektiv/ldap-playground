@@ -1,0 +1,22 @@
+# example data
+
+dn: ou=users,dc=example,dc=com
+objectclass:top
+objectclass:organizationalUnit
+ou: users
+
+dn: cn=default,ou=users,dc=example,dc=com
+cn: default
+sn: 4711
+# password s3cr3t
+userPassword:: czNjcjN0
+objectClass: person
+objectClass: top
+
+dn: cn=admin,ou=users,dc=example,dc=com
+cn: admin
+sn: 666
+# password s3cr3t
+userPassword:: czNjcjN0
+objectClass: person
+objectClass: top

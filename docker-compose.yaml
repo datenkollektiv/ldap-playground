@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  apacheds:
+    build:
+        context: image
+    ports:
+        - 127.0.0.1:389:10389
+        - 127.0.0.1:636:10636
+    environment: 
+        - APACHEDS_ROOT_PASSWORD=apacheds
+        - APACHEDS_TLS_KS_PWD=changeit
+        - DN=dc=example,dc=com
+        - OBJECT_CLASS=domain
+        - LDIF_FILE=/data/initial-import.ldif
+    volumes:
+        - ./apacheds/etc:/etc/apacheds
+        - ./apacheds/var:/var/apacheds
+        - ./apacheds/data:/data
