@@ -8,5 +8,5 @@ Please check the companion [blog post](https://devops.datenkollektiv.de/ldap-pla
 
 ---
 
-> Acknoledgment - The docker compose setup is heavyly based on the Docker image provided by [TremoloSecurity/apacheds
+> Acknowledgment - The docker compose setup is heavyly based on the Docker image provided by [TremoloSecurity/apacheds
 ](https://hub.docker.com/r/tremolosecurity/apacheds/dockerfile)
