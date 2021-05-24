@@ -1,0 +1,22 @@
+# seed data
+
+dn: ou=users,dc=datenkollektiv,dc=de
+objectclass:top
+objectclass:organizationalUnit
+ou: users
+
+dn: cn=devop,ou=users,dc=datenkollektiv,dc=de
+cn: devop
+sn: 4711
+# password s3cr3t
+userPassword:: czNjcjN0
+objectClass: person
+objectClass: top
+
+dn: cn=admin,ou=users,dc=datenkollektiv,dc=de
+cn: admin
+sn: 666
+# password s3cr3t
+userPassword:: czNjcjN0
+objectClass: person
+objectClass: top

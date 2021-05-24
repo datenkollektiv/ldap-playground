@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: openldap
+spec:
+  selector:
+    matchLabels:
+      app: openldap
+  serviceName: openldap-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: openldap
+    spec:
+      containers:
+        - name: openldap
+          image: docker.io/osixia/openldap:1.5.0
+          ports:
+          - containerPort: 389
+            name: ldap
+          env:
+            - name: LDAP_ORGANISATION
+              value: "datenkollektiv"
+            - name: LDAP_DOMAIN
+              value: "datenkollektiv.de"
+            - name: LDAP_ADMIN_PASSWORD
+              value : "openldap"
+            - name: LDAP_SEED_INTERNAL_LDIF_PATH_inactive
+              value: /seed
+          volumeMounts:
+            - mountPath: /seed
+              name: seed-data
+      volumes:
+        - name: seed-data
+          configMap:
+            name: seed-data.ldif
